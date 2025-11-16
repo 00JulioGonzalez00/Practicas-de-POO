@@ -1,0 +1,138 @@
+/*
+ Practica11.java - SistemaEstudiantilJ567
+ GUI para gestión de estudiantes con JavaFX
+ Componentes personalizados y validación en tiempo real
+ Temas: negro, rojo y blanco
+ Archivos: estilos_2067567.css, carpeta recursos_Gonzalez
+*/
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
+import javafx.scene.layout.*;
+import javafx.stage.Stage;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
+import javafx.collections.*;
+import javafx.geometry.Insets;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
+public class Practica11 extends Application {
+
+    private TableView<Estudiante> tabla;
+    private ObservableList<Estudiante> datos;
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Sistema Estudiantil J567");
+
+        // Menu personalizado
+        MenuBar menuBar = new MenuBar();
+        Menu menuArchivo = new Menu("Archivo");
+        MenuItem miSalir = new MenuItem("Salir");
+        miSalir.setOnAction(e -> primaryStage.close());
+        menuArchivo.getItems().add(miSalir);
+        menuBar.getMenus().add(menuArchivo);
+
+        // Formulario CRUD
+        CampoGonzalezValidado tfNombre = new CampoGonzalezValidado("Nombre");
+        CampoGonzalezValidado tfMatricula = new CampoGonzalezValidado("Matricula");
+        CampoGonzalezValidado tfCarrera = new CampoGonzalezValidado("Carrera");
+
+        Boton15Estilizado btnAgregar = new Boton15Estilizado("Agregar");
+        btnAgregar.setOnAction(e -> agregarEstudiante(tfNombre.getText(), tfMatricula.getText(), tfCarrera.getText()));
+
+        HBox form = new HBox(10, tfNombre, tfMatricula, tfCarrera, btnAgregar);
+        form.setPadding(new Insets(10));
+
+        // Tabla de datos
+        tabla = new TableView<>();
+        datos = FXCollections.observableArrayList();
+        tabla.setItems(datos);
+
+        TableColumn<Estudiante, String> colNombre = new TableColumn<>("Nombre");
+        colNombre.setCellValueFactory(data -> data.getValue().nombreProperty());
+        TableColumn<Estudiante, String> colMatricula = new TableColumn<>("Matricula");
+        colMatricula.setCellValueFactory(data -> data.getValue().matriculaProperty());
+        TableColumn<Estudiante, String> colCarrera = new TableColumn<>("Carrera");
+        colCarrera.setCellValueFactory(data -> data.getValue().carreraProperty());
+
+        tabla.getColumns().addAll(colNombre, colMatricula, colCarrera);
+
+        VBox root = new VBox(menuBar, form, tabla);
+        Scene scene = new Scene(root, 800, 600);
+
+        // aplicar CSS
+        scene.getStylesheets().add(getClass().getResource("estilos_2067567.css").toExternalForm());
+
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    private void agregarEstudiante(String nombre, String matricula, String carrera) {
+        if(nombre.isEmpty() || matricula.isEmpty() || carrera.isEmpty()) {
+            Dialog<String> dialog = new Dialog<>();
+            dialog.setContentText("Todos los campos son obligatorios.");
+            dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
+            dialog.showAndWait();
+            return;
+        }
+        Estudiante e = new Estudiante(nombre, matricula, carrera);
+        datos.add(e);
+    }
+}
+
+/* -------------------- COMPONENTES PERSONALIZADOS -------------------- */
+
+import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.scene.control.Button;
+
+class CampoGonzalezValidado extends TextField {
+    CampoGonzalezValidado(String placeholder) {
+        setPromptText(placeholder);
+        this.setOnKeyReleased(this::validar);
+    }
+    private void validar(KeyEvent e) {
+        if(getText().matches(".*\\d.*")) {
+            setStyle("-fx-border-color: red;");
+        } else {
+            setStyle("-fx-border-color: white;");
+        }
+    }
+}
+
+class Boton15Estilizado extends Button {
+    Boton15Estilizado(String texto) {
+        super(texto);
+        setStyle("-fx-background-color: black; -fx-text-fill: red; -fx-font-weight: bold;");
+        this.setOnMouseEntered(e -> setStyle("-fx-background-color: red; -fx-text-fill: white; -fx-font-weight: bold;"));
+        this.setOnMouseExited(e -> setStyle("-fx-background-color: black; -fx-text-fill: red; -fx-font-weight: bold;"));
+    }
+}
+
+/* -------------------- CLASE ESTUDIANTE -------------------- */
+
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
+class Estudiante {
+    private final StringProperty nombre;
+    private final StringProperty matricula;
+    private final StringProperty carrera;
+
+    Estudiante(String nombre, String matricula, String carrera) {
+        this.nombre = new SimpleStringProperty(nombre);
+        this.matricula = new SimpleStringProperty(matricula);
+        this.carrera = new SimpleStringProperty(carrera);
+    }
+
+    public StringProperty nombreProperty() { return nombre; }
+    public StringProperty matriculaProperty() { return matricula; }
+    public StringProperty carreraProperty() { return carrera; }
+}

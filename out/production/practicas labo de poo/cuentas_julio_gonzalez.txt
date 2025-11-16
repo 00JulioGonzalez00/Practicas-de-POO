@@ -1,0 +1,6 @@
+=== EXPORTACIÓN DE CUENTAS BANCARIAS ===
+Fecha: Sat Nov 15 16:14:30 CST 2025
+Estudiante: Julio González - Matrícula: 7567
+=========================================
+Matrícula: 1234 - Saldo: $1000.00
+Matrícula: 5678 - Saldo: $300.00

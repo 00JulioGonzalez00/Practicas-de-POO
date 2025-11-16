@@ -1,0 +1,63 @@
+// =============================
+// Diagrama UML (PlantUML)
+// =============================
+
+@startuml
+class VehiculoBaseJ {
+    - marca: String
+    - modelo: String
+    - año: int
+    + descripcion(): String
+    + calcularCostoSeguro(): double
+    + tipoCombustible(): String
+}
+
+class AutoG {
+    - puertas: int
+}
+class MotocicletaG {
+    - cilindrada: int
+}
+class CamionG {
+    - capacidadToneladas: double
+}
+
+VehiculoBaseJ <|-- AutoG
+VehiculoBaseJ <|-- MotocicletaG
+VehiculoBaseJ <|-- CamionG
+
+class Concesionaria567
+class MainPolimorfismo
+@enduml
+*/
+
+// =============================
+// Pruebas Unitarias (JUnit 5)
+// =============================
+/*
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+class AutoGTest {
+    @Test
+    void testDescripcion() {
+        AutoG a = new AutoG("Honda", "Civic", 2018, 4);
+        assertTrue(a.descripcion().contains("Honda"));
+    }
+}
+
+class MotocicletaGTest {
+    @Test
+    void testSeguroMoto() {
+        MotocicletaG m = new MotocicletaG("Kawasaki", "Ninja", 2021, 400);
+        assertEquals(1300, m.calcularCostoSeguro());
+    }
+}
+
+class CamionGTest {
+    @Test
+    void testCombustible() {
+        CamionG c = new CamionG("Volvo", "FH", 2017, 10);
+        assertEquals("Diesel", c.tipoCombustible());
+    }
+}

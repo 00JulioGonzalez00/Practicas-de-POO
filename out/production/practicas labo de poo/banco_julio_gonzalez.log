@@ -1,0 +1,54 @@
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG <init>
+INFO: SistemaBancoJG inicializado - Estudiante: Julio González
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG registrarUsuario
+INFO: Estudiante: Julio González - Matrícula: 7567 - Operación: Registrar usuario - ÉXITO: Usuario 1234 registrado con saldo: $1000.0
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG registrarUsuario
+INFO: Estudiante: Julio González - Matrícula: 7567 - Operación: Registrar usuario - ÉXITO: Usuario 5678 registrado con saldo: $500.0
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG retirar
+INFO: Estudiante: Julio González - Matrícula: 7567 - Operación: Retiro - ÉXITO: Retiro de $200.0 realizado. Nuevo saldo: $300.0
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG mostrarSaldo
+INFO: Estudiante: Julio González - Matrícula: 7567 - Operación: Consultar saldo - Consulta exitosa. Saldo: $300.0
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG exportarCuentas
+INFO: Estudiante: Julio González - Matrícula: 7567 - Operación: Exportar cuentas - ÉXITO: Cuentas exportadas a cuentas_julio_gonzalez.txt
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG <init>
+INFO: SistemaBancoJG inicializado - Estudiante: Julio González
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG registrarUsuario
+INFO: Estudiante: Julio González - Matrícula: 7567 - Operación: Registrar usuario - ÉXITO: Usuario 1234 registrado con saldo: $1000.0
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG <init>
+INFO: SistemaBancoJG inicializado - Estudiante: Julio González
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG registrarUsuario
+SEVERE: Estudiante: Julio González - Matrícula: 7567 - Operación: Registrar usuario - ERROR: Matrícula '123' debe tener exactamente 4 dígitos
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG <init>
+INFO: SistemaBancoJG inicializado - Estudiante: Julio González
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG registrarUsuario
+SEVERE: Estudiante: Julio González - Matrícula: 7567 - Operación: Registrar usuario - ERROR: Matrícula '12a4' debe contener solo números
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG <init>
+INFO: SistemaBancoJG inicializado - Estudiante: Julio González
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG retirar
+SEVERE: Estudiante: Julio González - Matrícula: 7567 - Operación: Retiro - ERROR: Usuario con matrícula '9999' no encontrado
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG <init>
+INFO: SistemaBancoJG inicializado - Estudiante: Julio González
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG registrarUsuario
+INFO: Estudiante: Julio González - Matrícula: 7567 - Operación: Registrar usuario - ÉXITO: Usuario 5555 registrado con saldo: $100.0
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG retirar
+WARNING: Estudiante: Julio González - Matrícula: 7567 - Operación: Retiro - Saldo insuficiente para usuario: 5555
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG <init>
+INFO: SistemaBancoJG inicializado - Estudiante: Julio González
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG registrarUsuario
+INFO: Estudiante: Julio González - Matrícula: 7567 - Operación: Registrar usuario - ÉXITO: Usuario 6666 registrado con saldo: $500.0
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG retirar
+INFO: Estudiante: Julio González - Matrícula: 7567 - Operación: Retiro - ÉXITO: Retiro de $300.0 realizado. Nuevo saldo: $200.0
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG <init>
+INFO: SistemaBancoJG inicializado - Estudiante: Julio González
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG registrarUsuario
+INFO: Estudiante: Julio González - Matrícula: 7567 - Operación: Registrar usuario - ÉXITO: Usuario 7777 registrado con saldo: $100.0
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG depositar
+INFO: Estudiante: Julio González - Matrícula: 7567 - Operación: Depósito - ÉXITO: Depósito de $50.0 realizado. Nuevo saldo: $150.0
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG <init>
+INFO: SistemaBancoJG inicializado - Estudiante: Julio González
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG registrarUsuario
+INFO: Estudiante: Julio González - Matrícula: 7567 - Operación: Registrar usuario - ÉXITO: Usuario 8888 registrado con saldo: $1000.0
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG depositar
+INFO: Estudiante: Julio González - Matrícula: 7567 - Operación: Depósito - ÉXITO: Depósito de $500.0 realizado. Nuevo saldo: $1500.0
+nov 15, 2025 4:14:30 P.M. SistemaBancoJG retirar
+INFO: Estudiante: Julio González - Matrícula: 7567 - Operación: Retiro - ÉXITO: Retiro de $300.0 realizado. Nuevo saldo: $1200.0
